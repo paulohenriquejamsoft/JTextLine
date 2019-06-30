@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs/JTextLine/v15
+/JTextLine/obj/Debug
+/JTextLine/bin/Debug
+/packages/MetroModernUI.1.4.0.0
