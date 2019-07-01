@@ -28,7 +28,7 @@ namespace JTextLine
             // Remove ESPACOS extras
             foreach (char caracter in texto)
             {
-                if(caracter != caracterAnterior)
+                if(caracter != caracterAnterior || caracter != ' ')
                 {
                     caracterAnterior = caracter;
                     novoTexto += caracter;
