@@ -13,8 +13,7 @@ namespace JTextLine
         private void btnExecutar_Click(object sender, EventArgs e)
         {
             var texto = txtTexto.Text.Trim().Replace('\r', ' ').Replace('\n', ' ');
-            string novoTexto = "";
-            char caracterAnterior = '%';
+            string novoTexto = "";            
 
             // Adiciona um ESPACO após as virgulas para deixar tudo com um padrão só
             foreach (char caracter in texto)
@@ -26,13 +25,14 @@ namespace JTextLine
             novoTexto = "";
 
             // Remove ESPACOS extras
+            char caracterAnterior = '%';
             foreach (char caracter in texto)
             {
-                if(caracter != caracterAnterior || caracter != ' ')
-                {
-                    caracterAnterior = caracter;
-                    novoTexto += caracter;
-                }
+                if (caracter == ' ' && caracterAnterior == ' ')
+                    continue;
+
+                caracterAnterior = caracter;
+                novoTexto += caracter;
             }
 
             // Passando o Texto Formatado para o TextBox
